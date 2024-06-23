@@ -1,0 +1,32 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Marzo 2024 - Junio 2024",
+    title: "Analista de Datos - Prácticas Optimissa/Alten",
+    descriptions: [
+      "Experiencia trabajando en proyectos con SQL, Python, Google Cloud, Looker, Tableau.",
+      "Práctica de análisis de datos utilizando las herramientas: Python, SQL, Google Cloud y Looker."
+    ]
+  },
+  {
+    date: "Marzo 2020 - Junio 2020",
+    title: "Soporte técnico/Desarrollador Web − Prácticas Mesia Software",
+    descriptions: [
+      "Creación y despliegue de sitio web para Bucalis utilizando las herramientas HTML, CSS, JavaScript, Bootstrap y PHP.",
+      "Despliegue de servicios (DNS, FTP, SSH)",
+      "Instalación y administración de equipos en local y remoto."
+    ]
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

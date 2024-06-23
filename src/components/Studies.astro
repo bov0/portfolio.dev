@@ -1,0 +1,32 @@
+---
+import StudiesItem from "./StudiesItem.astro";
+const STUDIES = [
+  {
+    date: "Septiembre 2022 - Junio 2024",
+    title: "2º Año DAW − IES Palomeras",
+    description:
+      "Me encuentro finalizando el grado Superior de Desarrollo de Aplicaciones Web a falta de prácticas.",
+  },
+  {
+    date: "Marzo-2020 - Marzo 2020",
+    title: "Curso de introducción a Ethical Hacking  − OpenWebinars",
+    description: "Obtención de certificado de la página OpenWebinars.",
+  },
+  {
+    date: "Septiembre 2018 - Marzo 2020",
+    title: "Grado Medio SMR  − IES Luis Braille",
+    description:
+      "Prácticas de grado Medio como soporte técnico, dedicado principalmente a matenimiento de equipos y creación de páginas web.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    STUDIES.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <StudiesItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
