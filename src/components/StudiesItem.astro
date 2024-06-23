@@ -1,14 +1,14 @@
 ---
-import LinkButton from "./LinkButton.astro"
+import LinkButton from "./LinkButton.astro";
 
 interface Props {
-  title: string
-  description: string
-  link?: string
-  date: string
+  title: string;
+  descriptions: string[];
+  link?: string;
+  date: string;
 }
 
-const { title, description, link, date } = Astro.props
+const { title, descriptions, link, date } = Astro.props;
 ---
 
 <div
@@ -22,9 +22,16 @@ const { title, description, link, date } = Astro.props
 <h3 class="text-lg font-semibold text-green-800 dark:text-blue-200/90 mt-2">
   {title}
 </h3>
-<p class="mb-4 text-base font-normal dark:text-gray-200 text-pretty">
-  {description}
-</p>
+<ul>
+  {
+    descriptions &&
+      descriptions.map((description) => (
+        <li class="mb-4 text-base font-normal dark:text-gray-200 text-pretty">
+          {description}
+        </li>
+      ))
+  }
+</ul>
 {
   link && (
     <LinkButton href={link}>
